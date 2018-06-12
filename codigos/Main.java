@@ -4,15 +4,15 @@ import java.util.*;
 abstract class Manejador{
     
     protected Manejador siguienteManejador;
-    // ----------------------------------------
+    
     public Manejador getSiguiente() {
         return this.siguienteManejador;
     }
-    // ----------------------------------------
+    
     public void setSiguiente(Manejador m) {
         this.siguienteManejador = m;
     }
-    // ----------------------------------------
+    
      public abstract void comprobar(String estado);
 }
 
@@ -20,7 +20,7 @@ abstract class Manejador{
 class ManejadorPendiente extends Manejador{
     public ManejadorPendiente() {
     }
-    // --------------------------------------------------
+    
     public void comprobar(String estado)
     {
        if( estado == null )
@@ -42,7 +42,7 @@ class ManejadorPendiente extends Manejador{
 class ManejadorDenegado extends Manejador{
     public ManejadorDenegado() {
     }
-    // --------------------------------------------------
+    
     
      public void comprobar(String estado)
     {
@@ -65,7 +65,7 @@ class ManejadorDenegado extends Manejador{
 class ManejadorAprobado extends Manejador{
     public ManejadorAprobado() {
     }
-    // --------------------------------------------------
+    
      public void comprobar(String estado)
     {
        if( (estado != null) && (estado.equalsIgnoreCase("APROBADO") == true) )
